@@ -17,7 +17,9 @@ Profile
             <p class="text-secondary">last Name: {{ user.last_name }}</p>
             <p class="text-secondary">Description: {{ user.profile.description }}</p>
 
-
+            <td><form class="form-group " action="{% url 'edit_profile' pk=user.profile.id %}">
+                <input  class="btn btn-primary" type="submit" value="Edit" />
+            </form>
         </div>
         </div>
         <!-- FORM HERE -->

@@ -8,6 +8,8 @@ from django.contrib.auth.decorators import login_required
 urlpatterns = [
     path('signup/', views.SignUp.as_view(), name='signup'),
     path('profile/<int:pk>/', login_required(views.ProfileView.as_view()), name='profile'),
+    path('edit_profile/<int:pk>/', login_required(views.ProfileUpdateView.as_view()), name='edit_profile'),
+
 ]
 
 if settings.DEBUG:
