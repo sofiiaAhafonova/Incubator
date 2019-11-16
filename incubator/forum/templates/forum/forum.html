@@ -1,0 +1,27 @@
+{% extends 'base.html' %} 
+
+{% block headlines %}
+Posts
+{% endblock %}
+
+{% block content %} 
+<h1>Posts</h1>
+<table class='table'>
+	<th>Title</th>
+	<th>Writer</th>
+	<th>Created</th>
+	<th></th>
+	{% for post in object_list %}
+	<tr>
+	    <td>{{ post.title }}</td>
+     	<td>{{ post.author }}</td>
+    	<td>{{ post.created }}</td>
+		<td><form class="form-group " action="{% url 'detail' pk=post.id %}">
+			<input  class="btn btn-primary" type="submit" value="Read" />
+		</form></td>
+		</tr>
+		
+	{% endfor %}
+</table>
+
+{% endblock %} 

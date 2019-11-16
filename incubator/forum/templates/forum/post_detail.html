@@ -1,0 +1,16 @@
+ 
+{% extends 'base.html' %} 
+
+{% block headlines %}
+Post details
+{% endblock %}
+
+{% block content %} 
+<h1>Post details</h1>
+
+	<h2>{{ object.title }}</h1>
+	<p>{{ object.content }}</p>
+	<p>Author: {{ object.author }}</p>
+	<p>Created: {{ object.created }}</p> 
+
+{% endblock %} 

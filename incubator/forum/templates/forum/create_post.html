@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block headlines %}
+Create Post
+{% endblock %}
+{% block content %}
+
+{% if user.is_authenticated %}
+    <form class="form-group" method="post" >
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" class="btn btn-primary" value="Create" />
+    </form>
+{% else %}
+<p>Please login.</p>
+{% endif %}
+
+{% endblock %}

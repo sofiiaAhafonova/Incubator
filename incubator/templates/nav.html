@@ -5,7 +5,10 @@
       </div>
       <ul class="nav navbar-nav">
         <li><a href="/">Home</a></li>
+        <li><a href="{% url 'forum' %}">Forum</a> </li>
+
          {% if user.is_authenticated %}
+          <li><a href="{% url 'create_post' %}">Create Post</a> </li>
           <li><a href="{% url 'profile' pk=user.profile.id%}">Profile</a> </li>
           <li><a href="{% url 'logout' %}">Logout</a> </li>
           {% else %}
