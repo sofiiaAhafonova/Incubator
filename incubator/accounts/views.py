@@ -5,6 +5,8 @@ from django.urls import reverse_lazy
 from django.views.generic import CreateView, DetailView, ListView, UpdateView
 from .models import Profile
 from .forms import UserForm, ProfileForm
+
+
 class SignUp(CreateView):
     form_class = UserCreationForm
     success_url = reverse_lazy('login')
@@ -38,8 +40,5 @@ class ProfileUpdateView(UpdateView):
 
     def get_context_data(self, **kwargs):
         context = super(ProfileUpdateView, self).get_context_data(**kwargs)
-        if self.request.POST:
-            context['user_form'] = UserForm(self.request.POST, instance=self.request.user)
-        else:
-            context['user_form'] = UserForm(instance=self.request.user)
+        context['user_form'] = UserForm(instance=self.request.user)
         return context
