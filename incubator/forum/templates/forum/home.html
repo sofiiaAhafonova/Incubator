@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block headlines %}
+Home
+{% endblock %}
+{% block content %}
+<div class="jumbotron text-center">
+    <h1>Wellcome to Incubator,
+        {% if user.is_authenticated %}
+        {{ user }}
+        {% else %}
+        fresh meat
+        {% endif %}
+    !</h1>
+</div>
+{% endblock %}
