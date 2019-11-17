@@ -1,0 +1,1 @@
+gunicorn -c $PWD/gunicorn.conf.py incubator.wsgi:application
