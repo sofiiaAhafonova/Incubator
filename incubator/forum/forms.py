@@ -4,7 +4,17 @@ from django.forms import ModelForm
 
 
 class CommentForm(forms.Form):
-    content = forms.CharField(widget=forms.Textarea)
+ 
+    parent_comment = forms.IntegerField(
+        widget=forms.HiddenInput,
+        required=False
+    )
+ 
+    comment_area = forms.CharField(
+        label="",
+        widget=forms.Textarea
+    )
+
 
 class PostForm(ModelForm):
     class Meta:

@@ -1,4 +1,4 @@
-from django.urls import path, include
+from django.urls import path, include, re_path
 from forum import views
 from django.contrib.auth.decorators import login_required
 from django.conf import settings # new
@@ -9,6 +9,7 @@ urlpatterns = [
     path('forum/', views.PostListView.as_view(), name='forum'),
     path('create_post/', login_required(views.CreatePostView.as_view()), name='create_post'),
     path('detail/<int:pk>/', views.PostDetailView.as_view(), name='detail'),
+    path('comment/<int:pk>/', login_required(views.CreateCommentView.as_view()), name='add_comment')
 ]
 
 if settings.DEBUG:
