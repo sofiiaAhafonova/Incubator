@@ -1,1 +1,1 @@
-gunicorn -c gunicorn.conf.py rush00.wsgi
+gunicorn -c gunicorn.conf.py rush01.wsgi
